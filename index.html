@@ -33,7 +33,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <form className="numWords">
+          <form id="count_form" className="numWords" autocomplete="off">
             <label>
               How many words ya got?
               <input type="text" name="numwords" id="numwords"
@@ -42,6 +42,14 @@
             </label>
             <input type="submit" value="Update" />
           </form>
+          <form id="archive" autocomplete="off">
+            <label>
+              <input type="text" name="name" id="archive_name" placeholder=""/>
+            </label>
+            <input type="submit" value="Archive" />
+          </form>
+          <button id="archive_load">Load</button>
+
         </div>
         <div class="col-md-12" id="chart">
         </div>

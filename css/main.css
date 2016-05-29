@@ -2,6 +2,9 @@ body {
   padding-top: 50px;
 }
 
+form { float: left; }
 form input {
   text-align: right;
 }
+
+button { margin: 3px; }
