@@ -7,6 +7,7 @@
     <title>NanoGraph</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -32,7 +33,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-3">
           <form id="count_form" className="numWords" autocomplete="off">
             <label>
               How many words ya got?
@@ -42,6 +43,19 @@
             </label>
             <input type="submit" value="Update" />
           </form>
+          <label>
+            Daily goal:
+            <input type="text" id="daily_goal" placeholder=""/>
+          </label>
+          <label>
+            Start date:
+            <input type="text" id="start" placeholder=""/>
+          </label>
+          <label>
+            End date:
+            <input type="text" id="end" placeholder=""/>
+          </label>
+
           <form id="archive" autocomplete="off">
             <label>
               <input type="text" name="name" id="archive_name" placeholder=""/>
@@ -51,7 +65,7 @@
           <button id="archive_load">Load</button>
 
         </div>
-        <div class="col-md-12" id="chart">
+        <div class="col-md-9" id="chart">
         </div>
       </div>
     </div><!-- /.container -->

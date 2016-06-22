@@ -15,6 +15,10 @@ $(function() {
     series: [{
       name: 'Words',
       data: []
+    }, {
+      type: 'line',
+      name: 'Goal',
+      data: [],
     }],
   });
 
@@ -47,6 +51,23 @@ $(function() {
     updateChart();
   })
 
+  $('#daily_goal').change(function(evt) {
+    updateChart();
+  });
+
+  /*
+  $('#start').datepicker({
+      onClose: function( selectedDate ) {
+        $( "#end" ).datepicker( "option", "minDate", selectedDate );
+      }
+  });
+  $('#end').datepicker({
+      onClose: function( selectedDate ) {
+        $( "#start" ).datepicker( "option", "maxDate", selectedDate );
+      }
+  });
+  */
+
   updateChart();
 })
 
@@ -72,4 +93,12 @@ function updateChart() {
     daycounts.push([day*unit, val]);
   });
   chart.series[0].setData(daycounts);
+
+  var start = moment($('#start').val());
+  var end = moment($('#end').val());
+  var span = (end - start);
+  chart.series[1].setData([
+      [start.valueOf(), 0],
+      [end.valueOf(), span/unit*$('#daily_goal').val()]
+  ])
 }
